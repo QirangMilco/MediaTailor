@@ -1,0 +1,10 @@
+{
+  "alwaysApprovedTools": [
+    "filesystem-read",
+    "notebook-query",
+    "filesystem-create",
+    "ace-text_search",
+    "notebook-add",
+    "filesystem-edit"
+  ]
+}

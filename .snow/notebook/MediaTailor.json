@@ -1,0 +1,18 @@
+{
+  ".snow/skills/mediataylor-project-cognition/SKILL.md": [
+    {
+      "id": "notebook-1774281892510_2ahcq7c45",
+      "filePath": ".snow/skills/mediataylor-project-cognition/SKILL.md",
+      "note": "项目主路线已切换为双 DSL：MTC 负责空间画布，MTT 负责时间轴；旧 MTL 设计已废弃，后续 agent 不得继续基于 .mtl 扩展主语法。",
+      "createdAt": "2026-03-24T00:04:52.510",
+      "updatedAt": "2026-03-24T00:04:52.510"
+    },
+    {
+      "id": "notebook-1774279479714_i8fribg19",
+      "filePath": ".snow/skills/mediataylor-project-cognition/SKILL.md",
+      "note": "MediaTailor 项目约束：TOML 只管项目配置，MTL 只管媒体编排；任何新功能设计都必须先判断所属层次，禁止把 scene/animation 结构塞回 TOML，禁止 renderer 直接依赖 AST 或 TOML 原始结构。",
+      "createdAt": "2026-03-23T23:24:39.714",
+      "updatedAt": "2026-03-23T23:24:39.714"
+    }
+  ]
+}
