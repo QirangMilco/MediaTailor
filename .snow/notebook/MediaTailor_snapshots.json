@@ -10,5 +10,60 @@
       "op": "add",
       "notebookId": "notebook-1774281892510_2ahcq7c45"
     }
+  ],
+  "0f74efcd-78f3-4ee3-88f7-134994ab9f71:3": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774283225658_pwet224r4"
+    },
+    {
+      "op": "add",
+      "notebookId": "notebook-1774283225925_h4byrooio"
+    }
+  ],
+  "e6510839-f82a-4e42-980a-652d5af0895b:19": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774287518336_2x3u1blfm"
+    },
+    {
+      "op": "add",
+      "notebookId": "notebook-1774287518610_rute4qsbd"
+    }
+  ],
+  "33470ac7-ef25-4465-a8e2-b143c9f5f0cf:17": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774316259135_jjcv4xetm"
+    },
+    {
+      "op": "add",
+      "notebookId": "notebook-1774316259409_qoce3eni8"
+    }
+  ],
+  "16da65f6-ceb3-4d66-ab70-c214a705a093:9": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774320760785_mdpen5s4r"
+    }
+  ],
+  "16da65f6-ceb3-4d66-ab70-c214a705a093:45": [
+    {
+      "op": "update",
+      "notebookId": "notebook-1774320760785_mdpen5s4r",
+      "previousNote": "MediaTailor 现支持一组内置字体族名 fallback：Times New Roman、宋体、黑体、楷体、微软雅黑。若 MediaTailor.toml 未显式映射，解析器会优先从当前项目 fonts/windows/ 目录寻找对应 Windows 字体文件，再退回系统替代字体；后续扩展缓存/字重时不要破坏这个顺序。"
+    }
+  ],
+  "dff3b667-37ab-4ef1-a309-e13d0460ab59:2": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774364888736_rz9fe7hpz"
+    }
+  ],
+  "07c7fc4e-dca4-4145-bdce-786fec012f5e:1": [
+    {
+      "op": "add",
+      "notebookId": "notebook-1774513166565_8137qvihw"
+    }
   ]
 }

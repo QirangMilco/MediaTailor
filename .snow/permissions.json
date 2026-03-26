@@ -5,6 +5,10 @@
     "filesystem-create",
     "ace-text_search",
     "notebook-add",
-    "filesystem-edit"
+    "filesystem-edit",
+    "terminal-execute",
+    "filesystem-edit_search",
+    "ide-get_diagnostics",
+    "notebook-update"
   ]
 }

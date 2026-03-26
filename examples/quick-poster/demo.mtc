@@ -1,0 +1,62 @@
+style heading
+  font 58
+  color #f8fafc
+  letter-spacing 4
+  align center
+
+style body
+  color #dbe4f0
+
+canvas poster
+  size 1200x1600
+  background #101418
+
+  rect
+    x 60
+    y 60
+    width 1080
+    height 1480
+    fill #1f2937
+
+  image "assets/hero.jpg"
+    x 110
+    y 110
+    width 980
+    height 980
+    fit cover
+
+  column
+    x 118
+    y 1080
+    gap 24
+    padding 20 24 20 24
+    text "MEDIA TAILOR" style heading
+      width 640
+    row
+      gap 28
+      padding 12 18
+      text "快速把素材拼成封面、海报与长图" style body
+        y 12
+        width 560
+        align center
+      image "assets/badge.png"
+        width 180
+        height 180
+        fit contain
+        opacity 0.96
+    row
+      gap 20
+      padding 8 16
+      text "SimHei / KaiTi can be dropped into fonts/windows" style note
+        width 620
+      rect
+        y 10
+        width 120
+        height 4
+        fill #f59e0b
+  rect
+    x 118
+    y 1330
+    width 240
+    height 6
+    fill #f59e0b

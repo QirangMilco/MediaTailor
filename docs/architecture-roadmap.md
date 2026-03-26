@@ -24,8 +24,6 @@ MediaTailor 的产品定位应接近：
 
 二者是正交关系，而不是谁取代谁。
 
----
-
 ## 2. 输入格式分工
 
 ### 2.1 `MediaTailor.toml`
@@ -38,6 +36,35 @@ TOML 只负责项目级配置，例如：
 - 默认渲染参数
 - 资源目录
 - profile / cache / build 模式
+- 全项目共享字体目录与默认字体策略
+
+MediaTailor 现在建议把字体规范提升到**项目根级别**：
+
+- 项目根放置 `MediaTailor.toml`
+- 项目根放置 `fonts/windows/`
+- `*.mtc` 与 `*.mtt` 都向上查找最近的 `MediaTailor.toml`
+- `fonts.families` 中的相对路径统一相对 `MediaTailor.toml` 所在目录解析
+
+默认约定建议：
+
+- 英文默认字体：`Times New Roman`
+- 中文默认字体：`宋体`
+
+内置建议支持的常见字体族名：
+
+- `Times New Roman`
+- `宋体` / `SimSun`
+- `黑体` / `SimHei`
+- `楷体` / `KaiTi` / `SimKai`
+- `微软雅黑` / `Microsoft YaHei`
+
+推荐在项目根目录放置：
+
+- `fonts/windows/times.ttf`
+- `fonts/windows/simsun.ttc`
+- `fonts/windows/simhei.ttf`
+- `fonts/windows/simkai.ttf`
+- `fonts/windows/msyh.ttc`
 
 示例：
 
@@ -55,6 +82,11 @@ background = "#000000"
 
 [assets]
 dirs = ["assets", "shared-assets"]
+
+[fonts.defaults]
+default = "Times New Roman"
+zh = "宋体"
+en = "Times New Roman"
 
 [output]
 dir = "dist"
@@ -138,6 +170,14 @@ CanvasHir + TimelineHir
 ```text
 MediaTailor/
 ├── Cargo.toml
+├── MediaTailor.toml
+├── fonts/
+│   └── windows/
+│       ├── times.ttf
+│       ├── simsun.ttc
+│       ├── simhei.ttf
+│       ├── simkai.ttf
+│       └── msyh.ttc
 ├── crates/
 │   ├── mt-cli/
 │   ├── mt-project/
@@ -155,13 +195,10 @@ MediaTailor/
 │   └── mt-common/
 ├── examples/
 │   ├── poster/
-│   │   ├── MediaTailor.toml
 │   │   └── poster.mtc
 │   ├── trailer/
-│   │   ├── MediaTailor.toml
 │   │   └── trailer.mtt
 │   └── hybrid/
-│       ├── MediaTailor.toml
 │       ├── cover.mtc
 │       └── main.mtt
 ├── docs/

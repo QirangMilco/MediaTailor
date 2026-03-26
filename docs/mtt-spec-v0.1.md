@@ -196,7 +196,20 @@ MTT 的核心单位是片段（clip item）。
 - `align center`
 - `valign bottom`
 - `margin-bottom 80`
+- `font 64`
+- `font-family "Times New Roman"`
+- `font-path "fonts/windows/times.ttf"`
+- `language zh`
+- `color white`
 - `transition fade 300ms`（保留）
+
+文本类片段（字幕、标题、角标）建议与 MTC 共用同一套项目级字体规范：
+
+- 统一在项目根 `MediaTailor.toml` 中配置默认字体
+- 统一在项目根 `fonts/windows/` 中放置 Windows 常见字体文件
+- `*.mtt` 与 `*.mtc` 都向上查找最近的 `MediaTailor.toml`
+- 英文默认建议 `Times New Roman`
+- 中文默认建议 `宋体`
 
 ---
 
@@ -317,8 +330,28 @@ MTT 与 MTC 是正交关系：
   align center
   valign bottom
   font 72
+  language en
   color white
 ```
+
+或直接指定项目内字体文件：
+
+```text
+8.5s..9.5s text "终章"
+  align center
+  valign bottom
+  font 72
+  language zh
+  font-path "fonts/windows/simsun.ttc"
+  color white
+```
+
+推荐将 `MTT` 的文本渲染完全对齐 `MTC`：
+
+- `language en` 默认走 `Times New Roman`
+- `language zh` 默认走 `宋体`
+- `font-family` 与 `font-path` 语义保持一致
+- 字体文件统一从项目根 `fonts/windows/` 管理
 
 ---
 

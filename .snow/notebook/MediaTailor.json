@@ -14,5 +14,78 @@
       "createdAt": "2026-03-23T23:24:39.714",
       "updatedAt": "2026-03-23T23:24:39.714"
     }
+  ],
+  "crates/mt-cli/src/parser.rs": [
+    {
+      "id": "notebook-1774287518336_2x3u1blfm",
+      "filePath": "crates/mt-cli/src/parser.rs",
+      "note": "row/column 原型采用递归解析：容器本身仅支持 x/y/gap，子节点继续复用 image/rect/text/row/column；后续扩展 padding/align 时要保持当前 2 空格缩进和“同层属性/子节点”判定逻辑。",
+      "createdAt": "2026-03-24T01:38:38.336",
+      "updatedAt": "2026-03-24T01:38:38.336"
+    },
+    {
+      "id": "notebook-1774283225658_pwet224r4",
+      "filePath": "crates/mt-cli/src/parser.rs",
+      "note": "MTC 原型当前只支持单 canvas、顶层 size/width/height/background，以及 image/rect 节点；后续扩展 row/column/text 时要保持 2 空格缩进规则和明确错误定位。",
+      "createdAt": "2026-03-24T00:27:05.658",
+      "updatedAt": "2026-03-24T00:27:05.658"
+    }
+  ],
+  "crates/mt-cli/src/render.rs": [
+    {
+      "id": "notebook-1774364888736_rz9fe7hpz",
+      "filePath": "crates/mt-cli/src/render.rs",
+      "note": "Text 样式现按固定优先级解析：系统默认 < MediaTailor.toml 的 [styles.*] < 当前 .mtc 顶层 style < text 节点本地属性；measure_text 与 draw_text_node 都必须走同一套 resolve_text_node_style，后续扩展 letter-spacing/align 时不要只改渲染或只改测量。",
+      "createdAt": "2026-03-24T23:08:08.736",
+      "updatedAt": "2026-03-24T23:08:08.736"
+    },
+    {
+      "id": "notebook-1774287518610_rute4qsbd",
+      "filePath": "crates/mt-cli/src/render.rs",
+      "note": "row/column 渲染当前走“先递归渲染、再按测量结果推进 cursor”的轻量布局模型，尺寸依赖 measure_node；image 会读取素材尺寸，text 会按 wrap 后结果估算宽高，后续加 align/padding/background 时不要破坏这个测量-布局闭环。",
+      "createdAt": "2026-03-24T01:38:38.610",
+      "updatedAt": "2026-03-24T01:38:38.610"
+    },
+    {
+      "id": "notebook-1774283225925_h4byrooio",
+      "filePath": "crates/mt-cli/src/render.rs",
+      "note": "图片原型渲染器当前走 CPU 合成：支持 rect、image、fit(none/fill/contain/cover) 和 opacity；cover 逻辑为先放大后中心裁剪，后续不要直接依赖不存在的 imageops::resize_to_fill。",
+      "createdAt": "2026-03-24T00:27:05.925",
+      "updatedAt": "2026-03-24T00:27:05.925"
+    }
+  ],
+  "crates/mt-cli/src/font.rs": [
+    {
+      "id": "notebook-1774320760785_mdpen5s4r",
+      "filePath": "crates/mt-cli/src/font.rs",
+      "note": "MediaTailor 现支持一组内置字体族名 fallback：Times New Roman、宋体、黑体、楷体、微软雅黑。若 MediaTailor.toml 未显式映射，解析器会优先从项目根级 fonts/windows/ 目录寻找对应 Windows 字体文件，再退回系统替代字体；配置查找策略为从输入 .mtc/.mtt 所在目录逐级向上查找最近的 MediaTailor.toml，后续扩展缓存/字重时不要破坏这个顺序。",
+      "createdAt": "2026-03-24T10:52:40.785",
+      "updatedAt": "2026-03-24T11:09:36.660"
+    },
+    {
+      "id": "notebook-1774316259135_jjcv4xetm",
+      "filePath": "crates/mt-cli/src/font.rs",
+      "note": "文本字体解析当前优先级固定为 font-path > font-family > language 默认字体 > default 默认字体 > 系统 sans fallback；MediaTailor.toml 的 defaults 引用 families 名称，后续扩展缓存/字体样式时不要打破这个顺序。",
+      "createdAt": "2026-03-24T09:37:39.135",
+      "updatedAt": "2026-03-24T09:37:39.135"
+    }
+  ],
+  "crates/mt-cli/src/config.rs": [
+    {
+      "id": "notebook-1774316259409_qoce3eni8",
+      "filePath": "crates/mt-cli/src/config.rs",
+      "note": "项目配置当前从输入 .mtc 同目录查找 MediaTailor.toml，families 路径按该目录解析；quick-poster 示例使用绝对字体路径仅为 Linux 原型验证，后续跨平台示例应避免假定系统字体路径。",
+      "createdAt": "2026-03-24T09:37:39.409",
+      "updatedAt": "2026-03-24T09:37:39.409"
+    }
+  ],
+  ".gitignore": [
+    {
+      "id": "notebook-1774513166565_8137qvihw",
+      "filePath": ".gitignore",
+      "note": "为 Rust workspace 初始化 .gitignore，已忽略 target、IDE 文件、.snow 以及 docs/tmp-*.md 临时分析文档；若后续需要提交某个 docs/tmp 文件，需先调整该规则。",
+      "createdAt": "2026-03-26T16:19:26.565",
+      "updatedAt": "2026-03-26T16:19:26.565"
+    }
   ]
 }
